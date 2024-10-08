@@ -27,8 +27,9 @@ jobs:
         run: |
           npm install
           ng build --configuration production
+          ng run gestion-reclamo-frontend:server:production
       - name: Zip artifact for deployment
-        run: zip release.zip dist/*
+        run: zip -r release.zip dist/browser dist/server
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -43,7 +44,7 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write #This is required for requesting the JWT
+      id-token: write # This is required for requesting the JWT
 
     steps:
       - name: Download artifact from build job
