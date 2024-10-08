@@ -27,10 +27,9 @@ jobs:
         run: |
           npm install
           ng build --configuration production
-          ng run gestion-reclamo:server:production
+          ng run gestion-reclamo-frontend:server:production
       - name: Zip artifact for deployment
         run: zip -r release.zip dist/browser dist/server
-
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
