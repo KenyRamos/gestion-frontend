@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ReclamoService {
 
-  private baseUrl="http://localhost:8080/api/v1/reclamos";
+  private baseUrl="https://web-backend-b9cxcpawaxbreqdu.canadacentral-01.azurewebsites.net/api/v1/reclamos";
   constructor(private httpClient: HttpClient) { }
   
 
