@@ -69,4 +69,4 @@ jobs:
         with:
           app-name: 'web-frontend-ang'
           slot-name: 'Production'
-          package: './dist/gestion-reclamo-frontend' # Cambia esto si es necesario
+          package: '.' # Cambia esto si es necesario
