@@ -8,11 +8,4 @@ import { Observable } from 'rxjs';
 })
 export class ReclamoService {
 
-  private baseUrl="https://web-backend-b9cxcpawaxbreqdu.canadacentral-01.azurewebsites.net/api/v1/reclamos";
-  constructor(private httpClient: HttpClient) { }
-  
-
-  obtenerListaReclamo():Observable<Reclamo[]>{
-    return this.httpClient.get<Reclamo[]>(`${this.baseUrl}`);
-  }
 }

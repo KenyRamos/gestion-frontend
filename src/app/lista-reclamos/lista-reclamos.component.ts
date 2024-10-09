@@ -16,10 +16,5 @@ export class ListaReclamosComponent implements OnInit{
    // this.obtenerReclamos();
   }
 
-  private obtenerReclamos() {
-    this.reclamoservicio.obtenerListaReclamo().subscribe(dato => {
-      this.reclamos = dato;
-    })
-
-  }
+  
 }
