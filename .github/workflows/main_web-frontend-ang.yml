@@ -26,9 +26,10 @@ jobs:
           npm install
           # Asegúrate de construir tanto el frontend como el SSR si es necesario
           npm run build
-      
+
       - name: Zip artifact for deployment job
-        run: zip -r release.zip dist/gestion-reclamo-frontend
+        run: |
+          powershell -Command "Compress-Archive -Path 'dist/gestion-reclamo-frontend/*' -DestinationPath 'release.zip'"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -52,8 +53,9 @@ jobs:
           name: node-app
 
       - name: Unzip artifact for deployment
-        run: unzip release.zip
-      
+        run: |
+          powershell -Command "Expand-Archive -Path 'release.zip' -DestinationPath './dist/gestion-reclamo-frontend' -Force"
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -67,5 +69,4 @@ jobs:
         with:
           app-name: 'web-frontend-ang'
           slot-name: 'Production'
-          package: ./dist/gestion-reclamo-frontend # Cambia esto si es necesario
-          
+          package: './dist/gestion-reclamo-frontend' # Cambia esto si es necesario
