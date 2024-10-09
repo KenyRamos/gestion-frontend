@@ -26,10 +26,10 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install
-          ng build --configuration production
-          ng run gestion-reclamo-frontend:server:production
+          ng build
+
       - name: Zip artifact for deployment
-        run: zip -r release.zip dist/browser dist/server
+        run: zip -r  release.zip *
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
