@@ -1,6 +1,3 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy Node.js app to Azure Web App - web-frontend-ang
 
 on:
@@ -24,8 +21,9 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install
-          npm run build-prod       # Build del frontend con producción
-          npm run build:ssr        # Build del servidor SSR
+          npx ng build --configuration=production --output-hashing=all  # Build del frontend (sin depender del script build-prod)
+          npx ng run gestion-reclamo-frontend:server                    # Build del servidor SSR (sin depender del script build:ssr)
+      
       - name: Zip artifact for deployment
         run: zip -r release.zip dist/gestion-reclamo-frontend
 
