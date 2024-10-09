@@ -24,9 +24,8 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install
-          npm run build-prod       # Build del frontend
+          npm run build-prod       # Build del frontend con producción
           npm run build:ssr        # Build del servidor SSR
-
       - name: Zip artifact for deployment
         run: zip -r release.zip dist/gestion-reclamo-frontend
 
