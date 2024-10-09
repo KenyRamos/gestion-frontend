@@ -1,0 +1,14 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+      "outDir": "./dist/out-tsc",
+      "module": "ES2022",
+      "target": "ES2022",
+      "types": ["node"] // Asegúrate de incluir tipos de Node
+    },
+    "files": [
+      "server.ts" // Asegúrate de que esta ruta sea correcta
+    ]
+  }
+  
+  

@@ -26,6 +26,8 @@
             "outputPath": "dist/gestion-reclamo-frontend",
             "index": "src/index.html",
             "browser": "src/main.ts",
+         
+          
             "polyfills": [
               "zone.js"
             ],
