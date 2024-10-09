@@ -13,7 +13,7 @@ export class ListaReclamosComponent implements OnInit{
 
   constructor(private reclamoservicio: ReclamoService) { }
   ngOnInit(): void {
-    this.obtenerReclamos();
+   // this.obtenerReclamos();
   }
 
   private obtenerReclamos() {
